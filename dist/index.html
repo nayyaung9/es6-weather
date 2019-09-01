@@ -9,33 +9,37 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link rel="stylesheet" href="./index.css" />
 </head>
-<body>
+<body class="">
   
   <nav class="navbar navbar-expand-sm bg-white navbar-light">
     <label class="switch">
-      <input type="checkbox">
+      <input type="checkbox" name="checkbox">
       <span class="slider round"></span>
     </label>
   </nav>
   
   <div class="container app">
     <div class="search">
-      <h1><i class="fas fa-map-marker-alt"></i> Current Location</h1>
-       <div class="form">
-         <label for="city">City</label>
-          <input type="text" id="city" class="input-form"/>
-          <button type="button">Search </button>
-        </div>
-        <div id="loading">Loading...</div>
-        <div id="weather">
-          <h1 id="weatherCity">City Name</h1>
-
-          <div id="weatherDescription">Weather Description</div>
-          <div id="weatherTemperature">Temperature</div>
-
-        </div>
+    <h1><i class="fas fa-map-marker-alt"></i> Current Location</h1>
+      <div class="form">
+        <label for="city">City</label>
+        <input type="text" id="city" class="input-form"/>
+        <button type="button">Search </button>
+      </div>
+      <div id="loading">Loading...</div>
+      <div id="weather">
+        <h1 id="weatherCity">City Name</h1>
+        <div id="weatherDescription">Weather Description</div>
+        <div id="weatherTemperature">Temperature</div>
       </div>
     </div>
+  </div>
+
+  <div class="container">
+    <div class="text-center">
+        <i class="fas fa-plus"></i>
+    </div>
+  </div>
  
 
   <script src="./bundle.js"></script>

@@ -6,5 +6,6 @@ export const elements = {
   weatherBox: document.querySelector('#weather'),
   weatherCity: weather.firstElementChild,
   weatherDocs: document.querySelector('#weatherDescription'),
-  weatherTemp: weather.lastElementChild
+  weatherTemp: weather.lastElementChild,
+  theme: document.querySelector('input[type=checkbox]')
 }
