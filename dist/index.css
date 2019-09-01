@@ -1,3 +1,9 @@
+body {
+  font-family: 'Livvic', sans-serif;
+}
+.main-app-section {
+  margin: 40px auto;
+}
 .app {
   max-width: 600px;
   display: flex;
@@ -9,7 +15,6 @@
   border-radius: 5px;
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: all 0.2s;
 }
 
 .switch {

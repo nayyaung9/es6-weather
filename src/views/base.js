@@ -8,9 +8,9 @@ export const elements = {
   searchButton: document.querySelector('button'),
   loadingText: document.querySelector('#loading'),
   weatherBox: document.querySelector('#weather'),
-  weatherCity: weather.firstElementChild,
+  weatherCity: document.querySelector('#weatherCity'),
   weatherDocs: document.querySelector('#weatherDescription'),
-  weatherTemp: weather.lastElementChild,
+  weatherTemp: document.querySelector('#weatherTemperature'),
 
   // plus sing to add new data
   addItem: document.querySelector('.add_location'),
@@ -47,7 +47,8 @@ export const renderUI = () => {
 
 export const closeTab = () => {
   elements.renderContainer.style.display = 'none'
-
+  elements.addNewContainer.style.display = 'none'
   elements.currentWeather.style.display = ''
+  elements.addItem.style.display = ''
 }
 
