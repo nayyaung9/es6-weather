@@ -22,10 +22,11 @@ export const searchWeather = () => {
 
   Http.fetchData(URL)
   .then(response => {
-    const WEATHER_DATA = new WeatherData(CITY_NAME, response.weather[0].description.toUpperCase());
+    const WEATHER_DATA = new WeatherData(CITY_NAME, response.weather[0].description.toUpperCase(), response.main.temp);
     updateWeather(WEATHER_DATA)
+    console.log(response);
   })
   .catch(err => console.log(err))
 
-  console.log(URL);
+ 
 }

@@ -1,8 +1,8 @@
 export class WeatherData {
-  constructor(cityName, description) {
+  constructor(cityName, description, temperature) {
     this.cityName = cityName,
     this.description = description,
-    this.temperature = ''
+    this.temperature = temperature
   }
 }
 
