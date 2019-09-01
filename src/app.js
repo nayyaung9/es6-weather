@@ -8,9 +8,8 @@ import {
 } from './views/base'
 
 // rendering the whole UI
-elements.body.onload = () => renderHome()
+elements.body.onload = () => searchWeather()
 
-elements.searchButton.addEventListener('click', searchWeather)
 elements.addButton.addEventListener('click', createStore)
 elements.closeTab.addEventListener('click', closeTab)
 elements.addItem.addEventListener('click', renderUI)

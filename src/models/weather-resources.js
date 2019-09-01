@@ -1,10 +1,3 @@
-export class Location {
-  constructor(latitude, longitude) {
-    this.latitude = latitude,
-    this.longitude = longitude
-  }
-}
-
 
 export class CurrentWeather {
   constructor(cityName, description, temperature) {

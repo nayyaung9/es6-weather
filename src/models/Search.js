@@ -1,6 +1,7 @@
 import { elements } from '../views/base'
 import { API_KEY, Http } from './Api'
-import { CurrentWeather, Location } from './weather-resources'
+import { CurrentWeather } from './weather-resources'
+import { renderHome } from '../views/base'
 
 const updateWeather = weatherData => {
   elements.weatherCity.textContent = weatherData.cityName;
@@ -8,15 +9,10 @@ const updateWeather = weatherData => {
   elements.weatherTemp.textContent = weatherData.temperature;
   elements.weatherBox.style.display = 'block';
   elements.loadingText.style.display = 'none';
+
 };
 
 export const searchWeather = () => {
-
-  // const CITY_NAME = elements.inputForm.value.trim()
-  // if (CITY_NAME.length === 0) return alert('Please enter a city name')
-
-  elements.weatherBox.style.display = 'none';
-  elements.loadingText.style.display = 'block';
 
   window.navigator.geolocation.getCurrentPosition(getPosition)
   // console.log(position)
@@ -30,8 +26,6 @@ export const searchWeather = () => {
     lon: localStorage.getItem('longitude')
   }
 
-
-  // const URL = `http://api.openweathermap.org/data/2.5/weather?q=${CITY_NAME}&units=metric&appid=${API_KEY}`;
   const URL = `http://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&units=metric&appid=${API_KEY}`
 
   console.log(URL)
@@ -41,7 +35,8 @@ export const searchWeather = () => {
     updateWeather(WEATHER_DATA)
     console.log(response)
   })
+  .then(renderHome())
   .catch(err => console.log(err))
 
- 
+  
 }
