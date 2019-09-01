@@ -1,4 +1,4 @@
-import { searchWeather } from './models/Search'
+import { searchWeather } from './models/Current'
 import { createStore } from './models/Saved'
 import { 
     elements, 
@@ -10,5 +10,6 @@ import {
 elements.body.onload = () => searchWeather()
 
 elements.addButton.addEventListener('click', createStore)
-elements.closeTab.addEventListener('click', closeTab)
 elements.addItem.addEventListener('click', renderUI)
+elements.closeTab.addEventListener('click', closeTab)
+
