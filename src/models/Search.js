@@ -1,6 +1,6 @@
 import { elements } from '../views/base'
 import { API_KEY, Http } from './Api'
-import { WeatherData } from './weather-data'
+import { CurrentWeather } from './weather-resources'
 
 const updateWeather = weatherData => {
   elements.weatherCity.textContent = weatherData.cityName;
@@ -22,7 +22,7 @@ export const searchWeather = () => {
 
   Http.fetchData(URL)
   .then(response => {
-    const WEATHER_DATA = new WeatherData(CITY_NAME, response.weather[0].description.toUpperCase(), response.main.temp);
+    const WEATHER_DATA = new CurrentWeather(CITY_NAME, response.weather[0].description.toUpperCase(), response.main.temp);
     updateWeather(WEATHER_DATA)
     console.log(response);
   })

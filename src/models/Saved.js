@@ -1,5 +1,5 @@
 import { elements, renderUI } from '../views/base'
-import { Record } from './Record'
+import { SavedLocation } from './weather-resources'
 import { API_KEY, Http } from './Api'
 
 export const addNewLocation = newRecord => {
@@ -14,7 +14,7 @@ export const createStore = () => {
   
     Http.fetchData(URL)
     .then(response => {
-      const WEATHER_DATA = new Record(CITY_NAME);
+      const WEATHER_DATA = new SavedLocation(CITY_NAME);
       addNewLocation(WEATHER_DATA)
       console.log(response);
     })
