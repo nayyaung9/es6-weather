@@ -1,19 +1,3 @@
-import axios from 'axios'
-
-export default class Search {
-  constructor(query) {
-    this.query = query;
-  }
-
-  async getResults() {
-    try {
-      const res = await axios.get(
-        `api.openweathermap.org/data/2.5/weather?q=${this.query}`
-      );
-
-      this.results = res.data;
-    } catch (err) {
-      console.log(err);
-    }
-  }
-}
+import { elements } from '../views/base'
+import { API_KEY } from './Api'
+import { WeatherData } from './weather-data'

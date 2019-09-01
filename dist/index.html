@@ -7,17 +7,26 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="root">
-    <div id="container">
-      <div class="row">
-        <h1>Add new location</h1>
-        <div class="form">
-          <input type="text" class="input-form"/>
-          <input type="submit" value="search" />
+  
+  <div id="container">
+    <div class="row">
+      <h1>Add new location</h1>
+       <div class="form">
+         <label for="city">City</label>
+          <input type="text" id="city" class="input-form"/>
+          <button type="button">Search </button>
+        </div>
+        <div id="loading">Loading...</div>
+        <div id="weather">
+          <h1 id="weatherCity">City Name</h1>
+
+          <div id="weatherDescription">Weather Description</div>
+          <div id="weatherTemperature">Temperature</div>
+
         </div>
       </div>
     </div>
-  </div>
+ 
 
   <script src="./bundle.js"></script>
 </body>
