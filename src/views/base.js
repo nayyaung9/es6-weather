@@ -7,5 +7,10 @@ export const elements = {
   weatherCity: weather.firstElementChild,
   weatherDocs: document.querySelector('#weatherDescription'),
   weatherTemp: weather.lastElementChild,
-  theme: document.querySelector('input[type=checkbox]')
+
+  addNewRecord: document.querySelector('#new_record')
+}
+
+export const renderUI = () => {
+  document.body.innerHTML = ''
 }
