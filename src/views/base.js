@@ -4,7 +4,6 @@ export const elements = {
 
   // current-weather section
   currentWeather: document.querySelector('.current_weather'),
-  inputForm: document.querySelector('.input-form'),
   loadingText: document.querySelector('#loading'),
   weatherBox: document.querySelector('#weather'),
   weatherCity: document.querySelector('#weatherCity'),

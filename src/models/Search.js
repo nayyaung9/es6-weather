@@ -9,19 +9,22 @@ const updateWeather = weatherData => {
   elements.weatherTemp.textContent = weatherData.temperature;
   elements.weatherBox.style.display = 'block';
   elements.loadingText.style.display = 'none';
-
 };
 
 export const searchWeather = () => {
-
+  
+  // get user physical location
   window.navigator.geolocation.getCurrentPosition(getPosition)
-  // console.log(position)
+
   function getPosition(position) {
+    // store user location in localStorage
     localStorage.setItem('latitude', position.coords.latitude)
     localStorage.setItem('longitude', position.coords.longitude)
   }
 
+  // store data in location object
   const location = {
+    //get user location from localStorage
     lat: localStorage.getItem('latitude'),
     lon: localStorage.getItem('longitude')
   }
@@ -35,8 +38,6 @@ export const searchWeather = () => {
     updateWeather(WEATHER_DATA)
     console.log(response)
   })
-  .then(renderHome())
+  .then(renderHome()) // callback as a renderHome from view/base.js
   .catch(err => console.log(err))
-
-  
 }

@@ -3,7 +3,6 @@ import { createStore } from './models/Saved'
 import { 
     elements, 
     renderUI, 
-    renderHome,
     closeTab
 } from './views/base'
 
