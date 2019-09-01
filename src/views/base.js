@@ -24,21 +24,30 @@ export const elements = {
   // parent is addNewContainer
   addNewContainer: document.querySelector('.add_new_item'),
   addNewRecord: document.querySelector('#new_record'),
-  addButton: document.querySelector('.add_btn')
+  addButton: document.querySelector('.add_btn'),
+  closeTab: document.querySelector('.close-up')
 }
 
-export const renderUI = () => {
-   //when adding new record, i want to clean out of whole UI
-   elements.currentWeather.style.display = 'none'
-   elements.renderContainer.style.display = 'none'
-   elements.addItem.style.display = 'none'
-
-   elements.renderContainer.style.display = ''
-   elements.addNewContainer.style.display = ''
-}
-
+// initial render
 export const renderHome = () => {
   // hide after onload page
   elements.renderContainer.style.display = 'none'
   elements.addNewContainer.style.display = 'none'
 }
+
+export const renderUI = () => {
+  //when adding new record, i want to clean out of whole UI
+  elements.currentWeather.style.display = 'none'
+  elements.renderContainer.style.display = 'none'
+  elements.addItem.style.display = 'none'
+
+  elements.renderContainer.style.display = 'block'
+  elements.addNewContainer.style.display = 'block'
+}
+
+export const closeTab = () => {
+  elements.renderContainer.style.display = 'none'
+
+  elements.currentWeather.style.display = ''
+}
+
