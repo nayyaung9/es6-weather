@@ -1,4 +1,4 @@
-import { elements, renderUI } from '../views/base'
+import { elements } from '../views/base'
 import { SavedLocation } from './weather-resources'
 import { API_KEY, Http } from './Api'
 

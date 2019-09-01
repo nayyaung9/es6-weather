@@ -19,6 +19,10 @@ export const elements = {
   // parent is renderContainer 
   renderContainer: document.querySelector('.read_storage_data'), 
   showItems: document.querySelector('#show_record'),
+
+  //add new section
+  // parent is addNewContainer
+  addNewContainer: document.querySelector('.add_new_item'),
   addNewRecord: document.querySelector('#new_record'),
   addButton: document.querySelector('.add_btn')
 }
@@ -28,4 +32,13 @@ export const renderUI = () => {
    elements.currentWeather.style.display = 'none'
    elements.renderContainer.style.display = 'none'
    elements.addItem.style.display = 'none'
+
+   elements.renderContainer.style.display = ''
+   elements.addNewContainer.style.display = ''
+}
+
+export const renderHome = () => {
+  // hide after onload page
+  elements.renderContainer.style.display = 'none'
+  elements.addNewContainer.style.display = 'none'
 }
