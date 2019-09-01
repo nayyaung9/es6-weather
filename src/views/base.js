@@ -29,7 +29,8 @@ export const elements = {
   closeTab: document.querySelector('.close-up'),
 
   // label-text
-  labelText: document.querySelector('.label-text')
+  labelText: document.querySelector('.label_text'),
+  clearText: document.querySelector('.no_text')
 }
 
 // initial render
@@ -54,7 +55,8 @@ export const clearUI = () => {
   elements.renderContainer.style.display = ''
   elements.currentWeather.style.display = ''
   elements.addItem.style.display = ''
-
+  elements.labelText.style.display = ''
+  elements.clearText.style.display = 'none'
   elements.addNewRecord.value = ''
 }
 
