@@ -1,6 +1,8 @@
-import { elements } from './views/base'
+import { elements, renderUI } from './views/base'
 import { searchWeather } from './models/Search'
-import {createStore } from './models/Saved'
+import { createStore } from './models/Saved'
 
 elements.searchButton.addEventListener('click', searchWeather)
 elements.addButton.addEventListener('click', createStore)
+
+elements.addItem.addEventListener('click', renderUI)

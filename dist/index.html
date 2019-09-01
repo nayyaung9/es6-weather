@@ -17,15 +17,15 @@
       <span class="slider round"></span>
     </label>
   </nav>
-  
-  <div class="container app">
-    <div class="search">
-    <h1><i class="fas fa-map-marker-alt"></i> Current Location</h1>
-      <div class="form">
-        <label for="city">City</label>
-        <input type="text" id="city" class="input-form"/>
-        <button type="button">Search </button>
-      </div>
+
+  <div class="current_weather">
+    <div class="container app">
+      <h1> <i class="fas fa-map-marker-alt"></i> Current Location </h1>
+      <form class="form from-group">
+        <input type="text" id="city" class="form-control input-form"/>
+        <button type="button" class="btn btn-success">Search </button>
+      </form>
+
       <div id="loading">Loading...</div>
       <div id="weather">
         <h1 id="weatherCity">City Name</h1>
@@ -41,8 +41,13 @@
     </div>
   </div>
 
-  <div class="container">
-    <div id="show_record"></div>
+  <div class="read_storage_data">
+    <div class="container app">
+      <div id="show_record"></div>
+    </div>
+  </div>
+  
+  <div class="container app" style="margin-top: 20px">
     <div class="add_item">
       <input type="text" id="new_record" />
       <button type="button" class="add_btn">Add</button>
