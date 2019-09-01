@@ -47,8 +47,8 @@ export const renderUI = () => {
 }
 
 export const clearUI = () => {
-  elements.renderContainer.style.display = 'none'
   elements.addNewContainer.style.display = 'none'
+  elements.renderContainer.style.display = ''
   elements.currentWeather.style.display = ''
   elements.addItem.style.display = ''
 

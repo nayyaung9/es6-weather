@@ -1,11 +1,11 @@
 import { elements, clearUI } from '../views/base'
-import { SavedLocation } from './weather-resources'
+// import { SavedLocation } from './weather-resources'
 import { API_KEY, Http } from './Api'
 
 export const addNewLocation = newRecord => {
   const savedItems = localStorage.getItem('weathers');
 
-  // elements.showItems.innerHTML = JSON.parse(savedItems).toString()
+  elements.showItems.textContent = savedItems
 };
 
 export const createStore = () => {
@@ -16,10 +16,12 @@ export const createStore = () => {
   
   Http.fetchData(URL)
   .then(response => {
-    const WEATHER_DATA = new SavedLocation(CITY_NAME);
+    // const WEATHER_DATA = new SavedLocation(CITY_NAME);
+    const WEATHER_DATA = CITY_NAME
     addNewLocation(WEATHER_DATA)
     //saved data in local storage
-    localStorage.setItem('weathers', JSON.stringify(WEATHER_DATA))
+    console.log(WEATHER_DATA)
+    localStorage.setItem('weathers', WEATHER_DATA)
   })
   .then(clearUI)
   .catch(err => console.log(err))
