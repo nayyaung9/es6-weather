@@ -19,6 +19,7 @@ export const searchWeather = () => {
   elements.loadingText.style.display = 'block';
 
   const URL = `http://api.openweathermap.org/data/2.5/weather?q=${CITY_NAME}&units=metric&appid=${API_KEY}`;
+  // const URL = `http://api.openweathermap.org/data/2.5/weather?lat=35&lon=139`
 
   Http.fetchData(URL)
   .then(response => {

@@ -8,7 +8,7 @@ import {
 } from './views/base'
 
 // rendering the whole UI
-window.onload = () => renderHome()
+elements.body.onload = () => renderHome()
 
 elements.searchButton.addEventListener('click', searchWeather)
 elements.addButton.addEventListener('click', createStore)
