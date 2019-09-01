@@ -76,3 +76,13 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+.add_location i {
+  font-size: 24px;
+  color: #999999;
+  cursor: pointer;
+}
+.label-text {
+  text-align: center;
+  margin: 20px auto;
+}
