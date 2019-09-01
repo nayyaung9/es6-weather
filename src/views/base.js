@@ -7,8 +7,10 @@ export const elements = {
   weatherCity: weather.firstElementChild,
   weatherDocs: document.querySelector('#weatherDescription'),
   weatherTemp: weather.lastElementChild,
-
-  addNewRecord: document.querySelector('#new_record')
+  
+  showItems: document.querySelector('#show_record'),
+  addNewRecord: document.querySelector('#new_record'),
+  addButton: document.querySelector('.add_btn')
 }
 
 export const renderUI = () => {
