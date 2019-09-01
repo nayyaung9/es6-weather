@@ -5,3 +5,5 @@ export class WeatherData {
     this.temperature = ''
   }
 }
+
+// export const WEATHER_PROXY_HANDLER = { }
