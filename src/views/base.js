@@ -18,6 +18,8 @@ export const elements = {
   renderContainer: document.querySelector('.read_storage_data'), 
   showItems: document.querySelector('#show_record'),
   renderCityName: document.querySelector('#render_CityName'),
+  renderCityDescription: document.querySelector('#render_CityDescription'),
+  renderCityTemperature: document.querySelector('#render_CityTemperature'),
 
   //add new section
   // parent is addNewContainer
