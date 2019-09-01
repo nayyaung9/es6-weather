@@ -1,7 +1,5 @@
-import sum from './sum'
+import { elements } from './views/base'
 
-console.log(sum(2, 5))
+import * as homeView from './views/homeView';
 
-const num = sum(2, 5)
 
-document.querySelector('#root').innerHTML = num
