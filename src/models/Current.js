@@ -1,6 +1,6 @@
 import { elements } from '../views/base'
 import { API_KEY, Http } from './Api'
-import { resolve } from 'url';
+import { axios } from 'axios'
 
 // const updateWeather = weatherData => {
 //   elements.weatherCity.textContent = weatherData.cityName + ', ' + weatherData.country;
@@ -12,18 +12,18 @@ import { resolve } from 'url';
 // Turn navigator.getCurrentPosition in a Promise
 function getCurrentLocation(options) {
   return new Promise((resolve, reject) => {
-    window.navigator.getCurrentPosition(
+    navigator.geolocation.getCurrentPosition(
       resolve,
-      ({ error, message }) => 
-      reject (
-        Object.assign(new Error(message), {name: 'Position error', code })
-      ),
+      ({ code, message }) =>
+        reject(
+          Object.assign(new Error(message), { name: 'PositionError', code })
+        ),
       options
     );
   });
 }
 
-export class Current {
+export default class Current {
   constructor() {
     this.coords = []
   }
@@ -37,9 +37,43 @@ export class Current {
       this.coords = [data.coords.latitude, data.coords.longitude];
     } catch(err) {
       // you have to enable to
+    
     }
   }
 
+    // Check if coords are on the object
+    coordAvailable() {
+      return this.coords.length;
+    }
+
+    async getWeather() {
+      try {
+        const res = await axios.get(
+          `${process.env.PROXY}api.openweathermap.org/data/2.5/weather?lat=${
+            this.coords[0]
+          }&lon=${this.coords[1]}&units=metric&appid=${process.env.APIKEY}`
+        );
+        // Save the data on the object
+        this.name = res.data.name;
+        this.country = res.data.sys.country;
+        this.weather = {
+          temp: Math.round(res.data.main.temp),
+          temp_max: Math.round(res.data.main.temp_max),
+          temp_min: Math.round(res.data.main.temp_min),
+          name: res.data.weather[0].main,
+          icon: res.data.weather[0].icon,
+        };
+      } catch (err) {
+        // Div of main weather
+        // const parent = document.querySelector('.main__weather');
+  
+        // // Clear loader
+        // clearLoader(parent);
+  
+        // // Render error
+        // renderError(parent, 'There was some problem getting the weather');
+      }
+    }
 
 
 }
