@@ -32,8 +32,10 @@ export const elements = {
   labelText: document.querySelector('.label_text'),
   clearText: document.querySelector('.no_text'),
 
-  // Dark mode
-  theme: document.querySelector('input[type=checkbox]')
+  // Dark mode,
+  theme: document.querySelector('input[type=checkbox]'),
+
+  page: document.querySelector('.render-page')
 }
 
 // initial render
@@ -45,12 +47,29 @@ export const renderHome = () => {
 
 export const renderUI = () => {
   //when adding new record, i want to clean out of whole UI
-  elements.currentWeather.style.display = 'none'
-  elements.renderContainer.style.display = 'none'
-  elements.addItem.style.display = 'none'
-  elements.renderContainer.style.display = 'none'
-  elements.labelText.style.display = 'none'
-  elements.addNewContainer.style.display = 'block'
+  // elements.currentWeather.style.display = 'none'
+  // elements.renderContainer.style.display = 'none'
+  // elements.addItem.style.display = 'none'
+  // elements.renderContainer.style.display = 'none'
+  // elements.labelText.style.display = 'none'
+  // elements.addNewContainer.style.display = 'block'
+
+  const markup = `
+  <div class="container app">
+        <div id="show_record" style="display: block">
+          <div class="row">
+            <div class="col-6">
+              <h2 id="render_CityName"></h2>
+            </div>
+            <div class="col-6">
+              <div id="render_CityDescription">Weather Description</div>
+              <div id="render_CityTemperature">Temperature</div>
+            </div>
+          </div>
+        </div>
+      </div>
+  `
+  elements.renderContainer.innerHTML = markup
 }
 
 export const clearUI = () => {
@@ -73,5 +92,14 @@ export const reloadUI = () => {
 export const themeUI = () => {
   localStorage.setItem('mode', (localStorage.getItem('mode') || 'light') === 'dark' ? 'light' : 'dark');
   localStorage.getItem('mode') === 'dark' ? document.querySelector('body').setAttribute('data-theme', 'dark') : document.querySelector('body').setAttribute('data-theme', 'light')
+}
 
+export const renderPage = () => {
+  const markup = `
+    <div class="render-page">
+      <h1>Hello x</h1>
+    </div>
+  `
+
+  elements.page.innerHTML = markup
 }

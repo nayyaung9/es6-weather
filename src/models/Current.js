@@ -1,7 +1,7 @@
 import { elements } from '../views/base'
 import { API_KEY, Http } from './Api'
 import { CurrentWeather } from './weather-resources'
-import { renderHome } from '../views/base'
+import { renderHome, renderPage } from '../views/base'
 
 const updateWeather = weatherData => {
   elements.weatherCity.textContent = weatherData.cityName + ', ' + weatherData.country;

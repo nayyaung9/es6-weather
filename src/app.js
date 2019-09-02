@@ -4,6 +4,7 @@ import {
     elements, 
     renderUI,
     reloadUI,
+    renderPage,
     themeUI
 } from './views/base'
 
