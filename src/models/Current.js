@@ -28,6 +28,18 @@ export class Current {
     this.coords = []
   }
 
+  async getCoords() {
+    try {
+      const data = await getCurrentLocation({
+        enableHighAccuracy: true,
+        maximumAge: 0,
+      });
+      this.coords = [data.coords.latitude, data.coords.longitude];
+    } catch(err) {
+      // you have to enable to
+    }
+  }
+
 
 
 }
