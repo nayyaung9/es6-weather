@@ -22,7 +22,7 @@
   <div class="main-app-section">
     <!-- Current Weather -->
     <div class="current_weather">
-      <h2 class="text-center"> <i class="fas fa-map-marker-alt"></i> Current Location </h2>
+      <h2 class="text-center header-text"> <i class="fas fa-map-marker-alt"></i> Current Location </h2>
       <div class="container app">
         <div id="loading">Loading...</div>
         <div id="weather">
@@ -42,7 +42,7 @@
     <!-- Current Weather -->
 
     <div class="label-text">
-      <h3 class="label_text"> <i class="fas fa-map-marked-alt"></i> Other Locations </h3>
+      <h3 class="label_text header-text"> <i class="fas fa-map-marked-alt"></i> Other Locations </h3>
       <p class="text-danger no_text"> You don't have any saved items</p>
     </div>
 
@@ -57,10 +57,7 @@
     <!-- render local storage place -->
     <div class="read_storage_data">
       <div class="container app">
-          <div class="close-up text-danger">
-            <b>X</b>
-          </div>
-        <div id="show_record">
+        <div id="show_record" style="display: block">
           <div class="row">
             <div class="col-6">
               <h2 id="render_CityName"></h2>

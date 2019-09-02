@@ -30,7 +30,10 @@ export const elements = {
 
   // label-text
   labelText: document.querySelector('.label_text'),
-  clearText: document.querySelector('.no_text')
+  clearText: document.querySelector('.no_text'),
+
+  // Dark mode
+  theme: document.querySelector('input[type=checkbox]')
 }
 
 // initial render
@@ -61,10 +64,14 @@ export const clearUI = () => {
 }
 
 
-export const closeTab = () => {
-  elements.renderContainer.style.display = 'none'
-  elements.addNewContainer.style.display = 'none'
+export const reloadUI = () => {
   elements.currentWeather.style.display = ''
-  elements.addItem.style.display = ''
+  elements.renderContainer.style.display = ''
+  elements.addNewContainer.style.display = 'none'
 }
 
+export const themeUI = () => {
+  localStorage.setItem('mode', (localStorage.getItem('mode') || 'light') === 'dark' ? 'light' : 'dark');
+  localStorage.getItem('mode') === 'dark' ? document.querySelector('body').setAttribute('data-theme', 'dark') : document.querySelector('body').setAttribute('data-theme', 'light')
+
+}

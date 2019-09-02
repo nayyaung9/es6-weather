@@ -1,8 +1,30 @@
+/* light mode */
+:root {
+  --background-color: #fff;
+  --navbar: #fff;
+  --currentBoard: #fff;
+  --headerText: #000;
+}
+
+[data-theme = "dark"] {
+  --background-color:  #1d2e1e;
+  --navbar: #000;
+  --currentBoard: rgb(20, 20, 20);
+  --headerText: #fff;
+}
+
+nav.navbar {
+  background: var(--navbar) !important;
+}
 body {
   font-family: 'Livvic', sans-serif;
+  background-color: var(--background-color)
 }
 .main-app-section {
   margin: 40px auto;
+}
+.header-text {
+  color: var(--headerText);
 }
 .app {
   max-width: 600px;
@@ -11,7 +33,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 3rem 4rem;
-  background-color: #fff;
+  background-color: var(--currentBoard);
   border-radius: 5px;
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -86,3 +108,4 @@ input:checked + .slider:before {
   text-align: center;
   margin: 20px auto;
 }
+
