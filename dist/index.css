@@ -4,13 +4,15 @@
   --navbar: #fff;
   --currentBoard: #fff;
   --headerText: #000;
+  --weatherCurrentText: #000;
 }
 
 [data-theme = "dark"] {
-  --background-color:  #1d2e1e;
-  --navbar: #000;
-  --currentBoard: rgb(20, 20, 20);
+  --background-color:  #003545;
+  --navbar: #003545;
+  --currentBoard: #00454a;
   --headerText: #fff;
+  --weatherCurrentText: #fff;
 }
 
 nav.navbar {
@@ -25,13 +27,14 @@ body {
 }
 .header-text {
   color: var(--headerText);
+  margin-bottom: 10px;
+}
+#weather {
+  color: var(--weatherCurrentText);
+  text-align: center;
 }
 .app {
   max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   padding: 3rem 4rem;
   background-color: var(--currentBoard);
   border-radius: 5px;
@@ -77,11 +80,11 @@ body {
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #00454a;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #00454a;
 }
 
 input:checked + .slider:before {

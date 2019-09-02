@@ -13,7 +13,10 @@
 <body>
   
   <nav class="navbar navbar-expand-sm bg-white navbar-light">
-    <label class="switch">
+    <a href="#" class="navbar-brand">
+      <b>Darkmode</b>
+    </a>
+    <label class="switch"> 
       <input type="checkbox" name="checkbox">
       <span class="slider round"></span>
     </label>
@@ -22,27 +25,30 @@
   <div class="main-app-section">
     <!-- Current Weather -->
     <div class="current_weather">
-      <h2 class="text-center header-text"> <i class="fas fa-map-marker-alt"></i> Current Location </h2>
-      <div class="container app">
-        <div id="loading">Loading...</div>
+      <h5 class="text-center header-text"> <i class="fas fa-map-marker-alt"></i> Current Location </h5>
+     
+      <div class="container app">        
         <div id="weather">
-          <div class="row">
-            <div class="col-6">
-              <h2 id="weatherCity">City Name</h2>
-            </div>
-            <div class="col-6">
-              <div id="weatherDescription">Weather Description</div>
-              <div id="weatherTemperature">Temperature</div>
+  
+            <div class="row">
+              <div class="col-6">
+                <h3 id="weatherCity">City Name</h3>
+              </div>
+              <div class="col-6">
+                <div id="weatherDescription">Weather Description</div>
+                <div id="weatherTemperature">Temperature</div>
+              </div>
             </div>
           </div>
-        </div>
+        
+
 
       </div>
     </div>
     <!-- Current Weather -->
 
     <div class="label-text">
-      <h3 class="label_text header-text"> <i class="fas fa-map-marked-alt"></i> Other Locations </h3>
+      <h5 class="label_text header-text"> <i class="fas fa-map-marked-alt"></i> Other Locations </h5>
       <p class="text-danger no_text"> You don't have any saved items</p>
     </div>
 

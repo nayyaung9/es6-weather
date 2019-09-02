@@ -4,11 +4,10 @@ import { CurrentWeather } from './weather-resources'
 import { renderHome } from '../views/base'
 
 const updateWeather = weatherData => {
-  elements.weatherCity.textContent = weatherData.cityName;
+  elements.weatherCity.textContent = weatherData.cityName + ', ' + weatherData.country;
   elements.weatherDocs.textContent = weatherData.description;
   elements.weatherTemp.textContent = weatherData.temperature;
   elements.weatherBox.style.display = 'block';
-  elements.loadingText.style.display = 'none';
 };
 
 export const searchWeather = () => {
@@ -34,7 +33,7 @@ export const searchWeather = () => {
   console.log(URL)
   Http.fetchData(URL)
   .then(response => {
-    const WEATHER_DATA = new CurrentWeather(response.name, response.weather[0].description.toUpperCase(), response.main.temp);
+    const WEATHER_DATA = new CurrentWeather(response.name,  response.sys.country, response.weather[0].description.toUpperCase(), response.main.temp);
     updateWeather(WEATHER_DATA)
     console.log(response)
   })

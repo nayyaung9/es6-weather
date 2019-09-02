@@ -1,7 +1,8 @@
 
 export class CurrentWeather {
-  constructor(cityName, description, temperature) {
+  constructor(cityName, country, description, temperature) {
     this.cityName = cityName,
+    this.country = country,
     this.description = description,
     this.temperature = temperature
   }

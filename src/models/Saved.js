@@ -26,7 +26,7 @@ export const createStore = () => {
     localStorage.setItem('weatherLists', JSON.stringify(WEATHER_DATA))
     addNewLocation(WEATHER_DATA) // saved in class 
     
-  
+    console.log(response)
   })
   .then(clearUI)
   .catch(err => console.log(err))
