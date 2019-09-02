@@ -2,6 +2,7 @@
 :root {
   --background-color: #fff;
   --navbar: #fff;
+  --navbarBrand: #000;
   --currentBoard: #fff;
   --headerText: #000;
   --weatherCurrentText: #000;
@@ -10,6 +11,7 @@
 [data-theme = "dark"] {
   --background-color:  #003545;
   --navbar: #003545;
+  --navbarBrand: #fff;
   --currentBoard: #00454a;
   --headerText: #fff;
   --weatherCurrentText: #fff;
@@ -18,6 +20,9 @@
 nav.navbar {
   background: var(--navbar) !important;
 }
+a.navbar-brand {
+  color: var(--navbarBrand) !important;
+}
 body {
   font-family: 'Livvic', sans-serif;
   background-color: var(--background-color)
@@ -25,7 +30,10 @@ body {
 .main-app-section {
   margin: 40px auto;
 }
-.header-text {
+p.no_text {
+  font-size: 20px;
+}
+.header-text, #show_record {
   color: var(--headerText);
   margin-bottom: 10px;
 }
