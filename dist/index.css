@@ -110,12 +110,12 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-.add_location i {
+.add-cityWeather i {
   font-size: 24px;
   color: #999999;
   cursor: pointer;
 }
-.label-text {
+.weather_statusText {
   text-align: center;
   margin: 20px auto;
 }
