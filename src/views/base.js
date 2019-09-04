@@ -20,45 +20,12 @@ export const elements = {
 
   // // label-text
   labelText: document.querySelector('.weather_statusText'),
-  // clearText: document.querySelector('.no_text'),
+  closePanel: document.querySelector('#closeInput'),
 
   // // Dark mode
-  // theme: document.querySelector('input[type=checkbox]')
+  theme: document.querySelector('input[type=checkbox]')
 }
 
-// initial render
-// export const renderHome = () => {
-//   // hide after onload page
-//   elements.renderContainer.style.display = 'none'
-//   elements.addNewContainer.style.display = 'none'
-// }
-
-// export const renderUI = () => {
-//   //when adding new record, i want to clean out of whole UI
-//   elements.currentWeather.style.display = 'none'
-//   elements.renderContainer.style.display = 'none'
-//   elements.addItem.style.display = 'none'
-//   elements.renderContainer.style.display = 'none'
-//   elements.labelText.style.display = 'none'
-//   elements.addNewContainer.style.display = 'block'
-// }
-
-// export const clearUI = () => {
-//   elements.addNewContainer.style.display = 'none'
-//   elements.renderContainer.style.display = ''
-//   elements.currentWeather.style.display = ''
-//   elements.addItem.style.display = ''
-//   elements.labelText.style.display = ''
-//   elements.clearText.style.display = 'none'
-//   elements.addNewRecord.value = ''
-// }
-
-
-// export const reloadUI = () => {
-//   elements.currentWeather.style.display = ''
-//   elements.renderContainer.style.display = ''
-//   elements.addNewContainer.style.display = 'none'
-// }
 
 export const themeUI = () => {
   localStorage.setItem('mode', (localStorage.getItem('mode') || 'light') === 'dark' ? 'light' : 'dark');
@@ -67,19 +34,22 @@ export const themeUI = () => {
 }
 
 export const clearUI = () => {
-  // elements.currentWeather.style.display = 'none'
   elements.labelText.style.display = 'none'
+  elements.addLocation.style.display = 'none'
   const markup = `
-  <div class="container app" style="margin-top: 20px">
-  <div class="add_item">
-    <div class="input-group mb-3">
-      <input type="text" id="new_record" class="form-control input-form" placeholder="Add City..."/>
-      <div class="input-group-append">
-        <button class="btn btn-success add_btn" type="button">Search</button> 
+    <div class="container app">
+    <div class="text-right text-danger" id="closeInput">
+      <p>x</p>
+    </div>
+      <div class="add_item">
+        <div class="input-group mb-3">
+          <input type="text" id="new_record" class="form-control input-form" placeholder="Add City..."/>
+          <div class="input-group-append">
+            <button class="btn btn-success add_btn" type="button">Search</button> 
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
   `;
   elements.container.innerHTML = markup;
 }

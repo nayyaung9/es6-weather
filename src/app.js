@@ -1,4 +1,4 @@
-import { elements, clearUI } from './views/base'
+import { elements, clearUI, themeUI } from './views/base'
 
 import * as homeView from './views/homeView'
 import Current from './models/Current';
@@ -23,6 +23,8 @@ elements.addLocation.addEventListener('click', () => {
 })
 
 
+// dark 
+elements.theme.addEventListener('click', () => themeUI())
 window.addEventListener('load', () => {
   homeView.renderHome()
 
