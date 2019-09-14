@@ -7,6 +7,8 @@ const state = {};
 
 const currentController = async () => {
 
+  const parent = document.querySelector('.current_weather')
+
   if (!state.current) state.current = new Current();
 
   console.log(state.current)
@@ -20,7 +22,7 @@ const currentController = async () => {
   if (state.current.coordAvailable() === 2) {
     await state.current.getWeather();
 
-    homeView.renderWeather(state.current)
+    homeView.renderWeather(state.current, parent)
 
   }
 }
