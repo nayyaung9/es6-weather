@@ -18,7 +18,6 @@ function getCurrentLocation(options) {
 export default class Current {
   constructor() {
     this.coords = [];
-    this.currentWeather = [];
   }
 
   async getCoords() {
@@ -44,11 +43,15 @@ export default class Current {
           this.coords[0]
         }&lon=${this.coords[1]}&units=metric&appid=${API_KEY}`
       )
-      const weather = {
-        name: res.data.name
+     
+      this.name = res.data.name;
+      this.country = res.data.sys.country;
+      this.weather = {
+        temp: Math.round(res.data.main.temp),
       }
-      this.currentWeather.push(weather)
-      return weather
+
+      console.log(res)
+
     } catch(err) {
 
     }

@@ -4,10 +4,11 @@ export const elements = {
 
   // current-weather section
   container: document.querySelector('.current_weather'),
+  header: document.querySelector('.navbar'),
 
   addLocation: document.querySelector('.add-cityWeather'),
   // loadingText: document.querySelector('#loading'),
-  // weatherBox: document.querySelector('#weather'),
+  weatherBox: document.querySelector('#weather'),
   // weatherCity: document.querySelector('#weatherCity'),
   // weatherDocs: document.querySelector('#weatherDescription'),
   // weatherTemp: document.querySelector('#weatherTemperature'),
