@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { API_KEY } from './Api'
+import { renderError } from '../views/base';
 
 function getCurrentLocation(options) {
   return new Promise((resolve, reject) => {
@@ -28,7 +29,9 @@ export default class Current {
       });
       this.coords = [ data.coords.latitude, data.coords.longitude ];
     } catch(err) {
+        const parent = document.querySelector('.current_weather')
 
+        renderError(parent, 'You have to enable the location')
     }
   }
 
@@ -55,7 +58,9 @@ export default class Current {
       console.log(res)
 
     } catch(err) {
+        const parent = document.querySelector('.current_weather')
 
+        renderError(parent, 'There was some problem getting data')
     }
   }
 

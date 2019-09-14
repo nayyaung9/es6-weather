@@ -99,3 +99,7 @@ input:checked + .slider:before {
 }
 
 
+.error_message {
+  color: rgb(211, 11, 11);
+  text-align: center;
+}
