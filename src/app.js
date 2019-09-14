@@ -29,19 +29,19 @@ const currentController = async () => {
   }
 }
 
+// Darkmode Controller 
 const darkmodeController = () => {
-
-  console.log(state.theme)
   const checkbox = document.querySelector('input[name=checkbox]')
 
   if(state.theme.dark === 0) {
     elements.body.classList.remove('dark');
+    elements.body.removeAttribute('data-theme')
     checkbox.checked = false
   } else if(state.theme.dark === 1) {
     elements.body.classList.add('dark');
+    elements.body.setAttribute('data-theme', 'dark')
     checkbox.checked = true
   }
-
 }
 
 
@@ -53,10 +53,12 @@ elements.body.addEventListener('click', e => {
       state.theme.dark = 1;
       state.theme.saveLocal();
       elements.body.classList.add('dark');
+      elements.body.setAttribute('data-theme', 'dark')
     } else {
       state.theme.dark = 0;
       state.theme.saveLocal();
       elements.body.classList.remove('dark');
+      elements.body.removeAttribute('data-theme')
     }
   }
 })

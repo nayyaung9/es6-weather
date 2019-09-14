@@ -1,13 +1,36 @@
+:root {
+  --background-color: #fff;
+  --navbar: #fff;
+  --navbarBrand: #000;
+  --currentBoard: #fff;
+  --headerText: #000;
+  --weatherCurrentText: #000;
+}
+[data-theme = "dark"] {
+  --background-color:  #003545;
+  --navbar: #003545;
+  --navbarBrand: #fff;
+  --currentBoard: #00454a;
+  --headerText: #fff;
+  --weatherCurrentText: #fff;
+}
+
+nav.navbar {
+  background: var(--navbar) !important;
+}
+a.navbar-brand {
+  color: var(--navbarBrand) !important;
+}
 body {
   font-family: 'Livvic', sans-serif;
+  background-color: var(--background-color);
+  color: var(--headerText);
 }
-.dark {
-  background: #000;
-}
+
 .current_weather {
   max-width: 500px;
   padding: 2rem 2rem;
-  background-color: #fff;
+  background-color: var(--currentBoard);
   border-radius: 5px;
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
   cursor: pointer;
