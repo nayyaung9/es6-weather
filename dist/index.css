@@ -27,7 +27,7 @@ body {
   color: var(--headerText);
 }
 
-.current_weather {
+.current_weather, .weather_list {
   max-width: 500px;
   padding: 2rem 2rem;
   background-color: var(--currentBoard);
@@ -36,7 +36,9 @@ body {
   cursor: pointer;
   margin: 20px auto;
 }
-
+.search_weather_list,  .search__city {
+  max-width: 500px;
+}
 
 .switch {
   position: relative;

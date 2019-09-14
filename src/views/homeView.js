@@ -11,6 +11,18 @@ export const renderHome = () => {
       <div class="container current_weather">
       
       </div>
+
+      <div class="container weatherApp-label">
+      <i class="fas fa-map-marker-alt"></i> <h3>Other Location</h3>
+      </div>
+
+      <div class="container search_weather_list">
+        // <div class="weather_list">
+        //   Hello
+        // </div>
+      </div>
+
+      <button class="add__city btn btn-info">Add</button>
     </div>
   `;
 
