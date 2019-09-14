@@ -1,54 +1,17 @@
-/* light mode */
-:root {
-  --background-color: #fff;
-  --navbar: #fff;
-  --navbarBrand: #000;
-  --currentBoard: #fff;
-  --headerText: #000;
-  --weatherCurrentText: #000;
-}
-
-[data-theme = "dark"] {
-  --background-color:  #003545;
-  --navbar: #003545;
-  --navbarBrand: #fff;
-  --currentBoard: #00454a;
-  --headerText: #fff;
-  --weatherCurrentText: #fff;
-}
-
-nav.navbar {
-  background: var(--navbar) !important;
-}
-a.navbar-brand {
-  color: var(--navbarBrand) !important;
-}
 body {
   font-family: 'Livvic', sans-serif;
-  background-color: var(--background-color)
 }
-.main-app-section {
-  margin: 40px auto;
-}
-p.no_text {
-  font-size: 20px;
-}
-.header-text, #show_record {
-  color: var(--headerText);
-  margin-bottom: 10px;
-}
-#weather {
-  color: var(--weatherCurrentText);
-  text-align: center;
-}
-.app {
-  max-width: 600px;
-  padding: 3rem 4rem;
-  background-color: var(--currentBoard);
+
+.current_weather {
+  max-width: 500px;
+  padding: 2rem 2rem;
+  background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  margin: 20px auto;
 }
+
 
 .switch {
   position: relative;
@@ -110,13 +73,4 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-.add-cityWeather i {
-  font-size: 24px;
-  color: #999999;
-  cursor: pointer;
-}
-.weather_statusText {
-  text-align: center;
-  margin: 20px auto;
-}
 

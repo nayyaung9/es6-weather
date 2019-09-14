@@ -48,6 +48,8 @@ export default class Current {
       this.country = res.data.sys.country;
       this.weather = {
         temp: Math.round(res.data.main.temp),
+        description: res.data.weather[0].main,
+        icon: res.data.weather[0].icon
       }
 
       console.log(res)

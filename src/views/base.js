@@ -3,7 +3,7 @@ export const elements = {
   body: document.querySelector('body'),
 
   // current-weather section
-  container: document.querySelector('.container'),
+  container: document.querySelector('.ui-container'),
 
 
 
