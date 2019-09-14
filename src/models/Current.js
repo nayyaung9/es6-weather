@@ -18,6 +18,7 @@ function getCurrentLocation(options) {
 export default class Current {
   constructor() {
     this.coords = [];
+    this.currentWeather = [];
   }
 
   async getCoords() {
@@ -46,7 +47,7 @@ export default class Current {
       const weather = {
         name: res.data.name
       }
-      this.coords.push(weather)
+      this.currentWeather.push(weather)
       return weather
     } catch(err) {
 

@@ -5,9 +5,13 @@ import * as homeView from './views/homeView'
 // global App state
 const state = {};
 
+
 const currentController = async () => {
+
   if (!state.current) state.current = new Current();
+
   console.log(state.current)
+  
   // Get current coords if they are not on state already
   if (state.current.coordAvailable() < 2) {
     await state.current.getCoords();
@@ -18,7 +22,7 @@ const currentController = async () => {
     await state.current.getWeather();
 
 
-    
+
 
     // Render weather
   }
