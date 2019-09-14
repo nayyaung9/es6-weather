@@ -1,3 +1,7 @@
+
+
+var ls = require('local-storage')
+
 export const elements = {
 
   body: document.querySelector('body'),

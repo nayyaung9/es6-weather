@@ -1,7 +1,9 @@
 body {
   font-family: 'Livvic', sans-serif;
 }
-
+.dark {
+  background: #000;
+}
 .current_weather {
   max-width: 500px;
   padding: 2rem 2rem;
