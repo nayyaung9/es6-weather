@@ -40,6 +40,12 @@ body {
   max-width: 500px;
 }
 
+.weatherApp-label i {
+  cursor: pointer;
+}
+
+
+
 .switch {
   position: relative;
   display: inline-block;

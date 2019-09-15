@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { API_KEY } from './Api'
+
 export default class Search {
   constructor(query) {
     this.query = query; 

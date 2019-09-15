@@ -45,17 +45,24 @@ const darkmodeController = () => {
   }
 }
 
+// SearchController 
 async function searchController(e)  {
   e.preventDefault();
 
   if (!this.value) return;
   state.search = new Search(this.value);
 
-  // Show loader on page
-  const parent = document.querySelector('.search__results');
+
+
   console.log(state.search)
   // Get results
   await state.search.getResults();
+
+  renderBackHome()
+
+  const parent = document.querySelector('.search__weather');
+  searchView.renderResults(state.search, parent)
+
 }
 
 // -- EVENT LISTENER --
@@ -98,6 +105,15 @@ elements.body.addEventListener('click', e => {
 
 })
 
+const renderBackHome = () => {
+  homeView.renderHome()
+
+  state.theme = new Dark();
+  state.theme.readLocal()
+  darkmodeController()
+
+  currentController()
+}
 
 
 window.addEventListener('load', () => {
