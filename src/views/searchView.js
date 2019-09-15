@@ -13,10 +13,10 @@ export const renderSearch = () => {
       </div>
      
       <div class="search__city__panel">
-        <form>
-          <input type="text" class="form-control" />
+        <form class="search__form">
+          <input type="text" class="form-control search__form__input" />
           <br />
-          <button class="btn btn-outline-info"> Add City </button>
+          <button class="btn btn-outline-info" id="add_city"> Add City </button>
         </form>
       </div>
      

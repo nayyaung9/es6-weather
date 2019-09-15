@@ -1,10 +1,11 @@
 import Current from './models/Current'
+import Search from './models/Search'
+import Saved from './models/Saved'
 import Dark from './models/Dark'
 
 import { elements } from './views/base'
 import * as homeView from './views/homeView'
 import * as searchView from './views/searchView'
-
 // global App state
 const state = {};
 
@@ -30,16 +31,32 @@ const darkmodeController = () => {
   const checkbox = document.querySelector('input[name=checkbox]')
 
   if(state.theme.dark === 0) {
+
     elements.body.classList.remove('dark');
     elements.body.removeAttribute('data-theme')
     checkbox.checked = false
+
   } else if(state.theme.dark === 1) {
+
     elements.body.classList.add('dark');
     elements.body.setAttribute('data-theme', 'dark')
     checkbox.checked = true
+
   }
 }
 
+async function searchController(e)  {
+  e.preventDefault();
+
+  if (!this.value) return;
+  state.search = new Search(this.value);
+
+  // Show loader on page
+  const parent = document.querySelector('.search__results');
+  console.log(state.search)
+  // Get results
+  await state.search.getResults();
+}
 
 // -- EVENT LISTENER --
 elements.body.addEventListener('click', e => {
@@ -71,7 +88,14 @@ elements.body.addEventListener('click', e => {
 
   if(addCityBtn) {
     searchView.renderSearch()
+
+    const form = document.querySelector('.search__form');
+    const input = document.querySelector('.search__form__input');
+    form.addEventListener('submit', searchController);
+    input.addEventListener('change', searchController);
   }
+
+
 })
 
 
