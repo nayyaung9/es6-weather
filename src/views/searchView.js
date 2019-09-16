@@ -23,7 +23,10 @@ export const renderSearch = () => {
 export const renderResults = (result, container) => {
   const markup = `
     <div class="weather_list">
-      ${result.query}
+      <div class="weather_cityName">
+        ${result.query}, ${result.results.weather[0].main}
+      </div>
+      
     </div>
   `;
 

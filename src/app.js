@@ -7,6 +7,7 @@ import Dark from './models/Dark'
 import * as base from './views/base'
 import * as homeView from './views/homeView'
 import * as searchView from './views/searchView'
+
 // global App state
 const state = {};
 
@@ -25,11 +26,10 @@ const currentController = async () => {
 
   if (state.current.coordAvailable() === 2) {
     await state.current.getWeather();
-
     base.clearLoader(parent)
-
     homeView.renderWeather(state.current, parent)
   }
+
 }
 
 // Darkmode Controller 
@@ -62,6 +62,7 @@ async function searchController(e)  {
   const parent = document.querySelector('.search__weather');
 
   searchView.renderResults(state.search, parent)
+  console.log(state.search)
 }
 
 // -- EVENT LISTENER --
