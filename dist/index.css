@@ -27,14 +27,23 @@ body {
   color: var(--headerText);
 }
 
-.current_weather, .weather_list {
+.current_weather {
   max-width: 500px;
   padding: 2rem 2rem;
   background-color: var(--currentBoard);
   border-radius: 5px;
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  margin: 20px auto;
+  margin: 10px auto;
+}
+.weather_list {
+  max-width: 500px;
+  padding: 1rem 1rem;
+  background-color: var(--currentBoard);
+  border-radius: 5px;
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  margin: 10px auto;
 }
 .search_weather_list,  .search__city {
   max-width: 500px;

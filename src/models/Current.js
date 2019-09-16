@@ -15,12 +15,12 @@ function getCurrentLocation(options) {
   });
 }
 
-
 export default class Current {
   constructor() {
     this.coords = [];
   }
 
+  // Get Coods by Geolocation API
   async getCoords() {
     try {
       const data = await getCurrentLocation({
@@ -29,12 +29,12 @@ export default class Current {
       });
       this.coords = [ data.coords.latitude, data.coords.longitude ];
     } catch(err) {
-        const parent = document.querySelector('.current_weather')
-
-        renderError(parent, 'You have to enable the location')
+      const parent = document.querySelector('.current_weather')
+      renderError(parent, 'You have to enable the location')
     }
   }
 
+  // check this.coords has variable
   coordAvailable() {
     return this.coords.length
   }
@@ -46,7 +46,7 @@ export default class Current {
           this.coords[0]
         }&lon=${this.coords[1]}&units=metric&appid=${API_KEY}`
       )
-     
+      // saved in object
       this.name = res.data.name;
       this.country = res.data.sys.country;
       this.weather = {
@@ -54,15 +54,10 @@ export default class Current {
         description: res.data.weather[0].main,
         icon: res.data.weather[0].icon
       }
-
-      console.log(res)
-
-    } catch(err) {
-        const parent = document.querySelector('.current_weather')
-
-        renderError(parent, 'There was some problem getting data')
+    } 
+    catch(err) {
+      const parent = document.querySelector('.current_weather')
+      renderError(parent, 'There was some problem getting data')
     }
   }
-
-
 }

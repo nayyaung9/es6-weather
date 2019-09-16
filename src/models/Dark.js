@@ -12,5 +12,4 @@ export default class Dark {
 
     if(theme) this.dark = theme
   }
-
 }

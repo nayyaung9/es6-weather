@@ -23,10 +23,18 @@ export const renderSearch = () => {
 export const renderResults = (result, container) => {
   const markup = `
     <div class="weather_list">
-      <div class="weather_cityName">
-        ${result.query}, ${result.results.weather[0].main}
+      <div class="weather_cityName text-center">
+        <h3>${result.query}, ${result.results.sys.country}</h3>
       </div>
-      
+      <div class="d-flex justify-content-around align-items-center">
+        <div id="cityWeather_icon">
+          <img src="http://openweathermap.org/img/wn/${result.results.weather[0].icon}.png" width="100px"/>
+          <h4 style="display: inline;">${result.results.weather[0].main}</h4>
+          </div>
+        <div id="cityWeather_temp">
+          <h2 class="text-success">${result.results.main.temp}°C</h2>
+        </div>
+      </div>
     </div>
   `;
 

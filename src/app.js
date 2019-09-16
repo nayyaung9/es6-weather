@@ -101,8 +101,6 @@ base.elements.body.addEventListener('click', e => {
     form.addEventListener('submit', searchController);
     input.addEventListener('change', searchController);
   }
-
-
 })
 
 const renderBackHome = () => {
@@ -115,7 +113,6 @@ const renderBackHome = () => {
   currentController()
 }
 
-
 window.addEventListener('load', () => {
 
   homeView.renderHome()
@@ -124,7 +121,6 @@ window.addEventListener('load', () => {
   state.theme.readLocal()
   darkmodeController()
 
-
   currentController()
 
-})
+});
