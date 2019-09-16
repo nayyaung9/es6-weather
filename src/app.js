@@ -3,7 +3,8 @@ import Search from './models/Search'
 import Saved from './models/Saved'
 import Dark from './models/Dark'
 
-import { elements, renderLoader, clearLoader } from './views/base'
+// import { elements, renderLoader, clearLoader } from './views/base'
+import * as base from './views/base'
 import * as homeView from './views/homeView'
 import * as searchView from './views/searchView'
 // global App state
@@ -14,7 +15,7 @@ const currentController = async () => {
 
   const parent = document.querySelector('.current_weather')
 
-  renderLoader(parent)
+  base.renderLoader(parent)
 
   if (!state.current) state.current = new Current();
 
@@ -25,7 +26,7 @@ const currentController = async () => {
   if (state.current.coordAvailable() === 2) {
     await state.current.getWeather();
 
-    clearLoader(parent)
+    base.clearLoader(parent)
 
     homeView.renderWeather(state.current, parent)
   }
@@ -36,12 +37,12 @@ const darkmodeController = () => {
   const checkbox = document.querySelector('input[name=checkbox]')
 
   if(state.theme.dark === 0) {
-    elements.body.classList.remove('dark');
-    elements.body.removeAttribute('data-theme')
+    base.elements.body.classList.remove('dark');
+    base.elements.body.removeAttribute('data-theme')
     checkbox.checked = false
   } else if(state.theme.dark === 1) {
-    elements.body.classList.add('dark');
-    elements.body.setAttribute('data-theme', 'dark')
+    base.elements.body.classList.add('dark');
+    base.elements.body.setAttribute('data-theme', 'dark')
     checkbox.checked = true
   }
 }
@@ -64,7 +65,7 @@ async function searchController(e)  {
 }
 
 // -- EVENT LISTENER --
-elements.body.addEventListener('click', e => {
+base.elements.body.addEventListener('click', e => {
 
   const addCityBtn = e.target.closest('.add__city')
   const closePopup = e.target.closest('.closeup')
@@ -74,13 +75,13 @@ elements.body.addEventListener('click', e => {
     if (checkbox.checked) {
       state.theme.dark = 1;
       state.theme.saveLocal();
-      elements.body.classList.add('dark');
-      elements.body.setAttribute('data-theme', 'dark')
+      base.elements.body.classList.add('dark');
+      base.elements.body.setAttribute('data-theme', 'dark')
     } else {
       state.theme.dark = 0;
       state.theme.saveLocal();
-      elements.body.classList.remove('dark');
-      elements.body.removeAttribute('data-theme')
+      base.elements.body.classList.remove('dark');
+      base.elements.body.removeAttribute('data-theme')
     }
   }
 
