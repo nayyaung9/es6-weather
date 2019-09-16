@@ -65,12 +65,30 @@ async function searchController(e)  {
   console.log(state.search)
 }
 
+const savedController = id => {
+  if (!state.saved) state.saved = new Saved();
+  
+  // if location isn't saved already, save it
+  if (!state.saved.checkifSaved(id)) {
+    // add the location
+    state.saved.addLocation(id);
+    
+    // save to local storage
+    state.saved.saveLocal();
+    // render home when added
+    homeView.renderHome();
+    darkmodeController();
+    currentController();
+  }
+}
+ 
 // -- EVENT LISTENER --
 base.elements.body.addEventListener('click', e => {
 
   const addCityBtn = e.target.closest('.add__city')
   const closePopup = e.target.closest('.closeup')
   const checkbox = e.target.closest('input[name=checkbox]')
+  const savedItem = e.target.closest('.weather_list')
 
   if (checkbox) {
     if (checkbox.checked) {
@@ -101,6 +119,11 @@ base.elements.body.addEventListener('click', e => {
     form.addEventListener('submit', searchController);
     input.addEventListener('change', searchController);
   }
+
+  if(savedItem) {
+    const id = parseInt(savedItem.dataset.id, 10)
+    savedController(id)
+  }
 })
 
 const renderBackHome = () => {
@@ -116,6 +139,8 @@ const renderBackHome = () => {
 window.addEventListener('load', () => {
 
   homeView.renderHome()
+
+  state.saved = new Saved()
 
   state.theme = new Dark();
   state.theme.readLocal()

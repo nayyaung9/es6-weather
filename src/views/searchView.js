@@ -22,7 +22,7 @@ export const renderSearch = () => {
 
 export const renderResults = (result, container) => {
   const markup = `
-    <div class="weather_list">
+    <div class="weather_list" data-id=${result.results.id}>
       <div class="weather_cityName text-center">
         <h3>${result.query}, ${result.results.sys.country}</h3>
       </div>
