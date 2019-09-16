@@ -3,7 +3,7 @@ import Search from './models/Search'
 import Saved from './models/Saved'
 import Dark from './models/Dark'
 
-import { elements } from './views/base'
+import { elements, renderLoader, clearLoader } from './views/base'
 import * as homeView from './views/homeView'
 import * as searchView from './views/searchView'
 // global App state
@@ -11,7 +11,10 @@ const state = {};
 
 // Controllers 
 const currentController = async () => {
+
   const parent = document.querySelector('.current_weather')
+
+  renderLoader(parent)
 
   if (!state.current) state.current = new Current();
 
@@ -22,6 +25,8 @@ const currentController = async () => {
   if (state.current.coordAvailable() === 2) {
     await state.current.getWeather();
 
+    clearLoader(parent)
+
     homeView.renderWeather(state.current, parent)
   }
 }
@@ -31,17 +36,13 @@ const darkmodeController = () => {
   const checkbox = document.querySelector('input[name=checkbox]')
 
   if(state.theme.dark === 0) {
-
     elements.body.classList.remove('dark');
     elements.body.removeAttribute('data-theme')
     checkbox.checked = false
-
   } else if(state.theme.dark === 1) {
-
     elements.body.classList.add('dark');
     elements.body.setAttribute('data-theme', 'dark')
     checkbox.checked = true
-
   }
 }
 
@@ -52,17 +53,14 @@ async function searchController(e)  {
   if (!this.value) return;
   state.search = new Search(this.value);
 
-
-
-  console.log(state.search)
   // Get results
   await state.search.getResults();
 
   renderBackHome()
 
   const parent = document.querySelector('.search__weather');
-  searchView.renderResults(state.search, parent)
 
+  searchView.renderResults(state.search, parent)
 }
 
 // -- EVENT LISTENER --
