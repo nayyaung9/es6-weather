@@ -2,7 +2,7 @@
 import Current from './models/Current'
 import Search from './models/Search'
 import Saved from './models/Saved'
-
+import Others from './models/Others'
 // Darkmode
 import Dark from './models/Dark'
 
@@ -19,6 +19,7 @@ const state = {};
 const currentController = async () => {
 
   const parent = document.querySelector('.current_weather')
+  // this one
 
   base.renderLoader(parent)
 
@@ -65,7 +66,24 @@ async function searchController(e)  {
   const parent = document.querySelector('.search__weather');
 
   searchView.renderResults(state.search, parent)
+
   console.log(state.search)
+}
+
+const otherController = () => {
+
+  if(!state.others) state.others = new Others()
+
+  const parent = document.querySelector('.search__weather')
+
+  if(state.saved.checkSaved() === 0) {
+    base.renderError(
+      parent, 
+      'You have no saved cities, click the button to add them.'
+    )
+    return;
+  }
+
 }
 
 const savedController = id => {
@@ -82,6 +100,7 @@ const savedController = id => {
     homeView.renderHome();
     darkmodeController();
     currentController();
+    otherController();
   } else {
     
   }
@@ -151,4 +170,5 @@ window.addEventListener('load', () => {
   darkmodeController()
 
   currentController()
+  otherController()
 });

@@ -15,6 +15,10 @@ export default class Saved {
     return this.saved.findIndex(el => el === id) !== -1;
   }
 
+  checkSaved() {
+    return this.saved.length;
+  }
+
   saveLocal() {
     localStorage.setItem('savedlocations', JSON.stringify(this.saved))
   }
