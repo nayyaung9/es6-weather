@@ -1,9 +1,12 @@
+// Models
 import Current from './models/Current'
 import Search from './models/Search'
 import Saved from './models/Saved'
+
+// Darkmode
 import Dark from './models/Dark'
 
-// import { elements, renderLoader, clearLoader } from './views/base'
+// Views
 import * as base from './views/base'
 import * as homeView from './views/homeView'
 import * as searchView from './views/searchView'
@@ -11,7 +14,8 @@ import * as searchView from './views/searchView'
 // global App state
 const state = {};
 
-// Controllers 
+// -- Controllers collections --
+// Get Current Weather by Geolocation API coords
 const currentController = async () => {
 
   const parent = document.querySelector('.current_weather')
@@ -29,7 +33,6 @@ const currentController = async () => {
     base.clearLoader(parent)
     homeView.renderWeather(state.current, parent)
   }
-
 }
 
 // Darkmode Controller 
@@ -79,6 +82,8 @@ const savedController = id => {
     homeView.renderHome();
     darkmodeController();
     currentController();
+  } else {
+    
   }
 }
  
@@ -137,7 +142,6 @@ const renderBackHome = () => {
 }
 
 window.addEventListener('load', () => {
-
   homeView.renderHome()
 
   state.saved = new Saved()
@@ -147,5 +151,4 @@ window.addEventListener('load', () => {
   darkmodeController()
 
   currentController()
-
 });

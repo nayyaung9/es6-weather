@@ -1,9 +1,19 @@
 # es6-weather
 
-## Weather App White Theme
+## App Interface
 
-<img src='./weather-white.png' />
+<img src='./assets/project_init_white.png'>
 
-## Weather App Dark Mode
+<img src='./assets/project_init_dark.png'>
 
-<img src='./weather-darkmode.png' />
+## Search City Interface
+
+<img src='./assets/project_search_white.png'>
+
+<img src='./assets/project_search_dark.png'>
+
+## App with searched data Interface
+
+<img src='./assets/project_final_view_white.png'>
+
+<img src='./assets/project_final_view_dark.png'>

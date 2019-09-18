@@ -18,4 +18,10 @@ export default class Saved {
   saveLocal() {
     localStorage.setItem('savedlocations', JSON.stringify(this.saved))
   }
+
+  readLocal() {
+    const saved = JSON.parse(localStorage.getItem('savedlocations'));
+
+    if(saved) this.saved = saved;
+  }
 }

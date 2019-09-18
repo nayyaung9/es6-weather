@@ -36,6 +36,9 @@ export const renderResults = (result, container) => {
         </div>
       </div>
     </div>
+    <h4 class="text-center text-danger">
+      If you want to save item, click on what you want to save.
+    </h4>
   `;
 
   container.insertAdjacentHTML('afterbegin', markup);
